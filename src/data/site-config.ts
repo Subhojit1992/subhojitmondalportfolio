@@ -38,8 +38,8 @@ export type SiteConfig = {
 };
 
 const siteConfig: SiteConfig = {
-    title: 'Subhojit',
-    subtitle: '< front end developer />',
+    title: 'Subhojit.',
+    subtitle: '< frontend developer />',
     description: 'Over 10 years plus of experience in frontend developer Subhojit Mondal',
     image: {
         src: '/hero.jpeg',
