@@ -13,6 +13,12 @@ export default defineConfig({
         tailwind({
             applyBaseStyles: false
         }),
-        AstroPWA()
+        AstroPWA({
+            registerType: 'autoUpdate',
+            injectRegister: 'inline',
+            workbox: {
+                globPatterns: ['**/*.{js,css,html,ico,png,svg}']
+            }
+        })
     ]
 });
