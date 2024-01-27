@@ -8,6 +8,18 @@ import PostPreview from '../../components/PostPreview.astro';
 import { sortItemsByDateDesc } from '../../utils/data-utils';
 import { slugify } from '../../utils/common-utils';
 
+import {
+    FacebookShareButton,
+    HackerNewsShareButton,
+    EmailShareButton,
+    LinkedInShareButton,
+    RedditShareButton,
+    TwitterShareButton,
+    SocialShare
+} from 'astro-social-share';
+
+const BUTTONS = [LinkedInShareButton, TwitterShareButton, RedditShareButton, FacebookShareButton, EmailShareButton];
+
 export async function getStaticPaths() {
     const posts = (await getCollection('blog')).sort(sortItemsByDateDesc);
     const postCount = posts.length;
@@ -62,7 +74,10 @@ const { Content } = await post.render();
                     </div>
                 )
             }
-            <Button class="copy-url-button" aria-label="Copy link" data-url={href} data-tooltip-default="Copy link" data-tooltip-success="Copied">Share</Button>
+            <SocialShare buttons={BUTTONS} description={excerpt} title={title} />
+            <Button class="copy-url-button" aria-label="Copy link" data-url={href} data-tooltip-default="Copy link" data-tooltip-success="Copied">
+                Copy link
+            </Button>
         </div>
     </article>
     {
@@ -74,23 +89,30 @@ const { Content } = await post.render();
             </div>
         )
     }
+    <div id="blog-comments"></div>
     <!-- <Subscribe class="my-16 sm:my-24" /> -->
-    <script
-        src="https://giscus.app/client.js"
-        data-repo="Subhojit1992/subhojitmondalportfolio"
-        data-repo-id="R_kgDOLJ7t8g"
-        data-category="Blog Post Comments"
-        data-category-id="DIC_kwDOLJ7t8s4CctfB"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="1"
-        data-input-position="top"
-        data-theme="preferred_color_scheme"
-        data-lang="en"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async></script>
+    <script>
+        let giscusTheme = localStorage.getItem('theme') === 'dark' ? 'dark_protanopia' : 'light_protanopia';
+        let giscusAttributes = {
+            src: 'https://giscus.app/client.js',
+            'data-repo': 'Subhojit1992/subhojitmondalportfolio',
+            'data-repo-id': 'R_kgDOLJ7t8g',
+            'data-category': 'Blog Post Comments',
+            'data-category-id': 'DIC_kwDOLJ7t8s4CctfB',
+            'data-mapping': 'pathname',
+            'data-reactions-enabled': '1',
+            'data-emit-metadata': '1',
+            'data-input-position': 'top',
+            'data-theme': giscusTheme,
+            'data-lang': 'en',
+            crossorigin: 'anonymous',
+            async: ''
+        };
+
+        let giscusScript = document.createElement('script');
+        Object.entries(giscusAttributes).forEach(([key, value]) => giscusScript.setAttribute(key, value));
+        document.querySelector('#blog-comments')?.appendChild(giscusScript);
+    </script>
 </BaseLayout>
 
 <script>

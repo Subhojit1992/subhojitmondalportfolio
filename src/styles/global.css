@@ -48,3 +48,15 @@
     }
     */
 }
+
+.astro-social-share {
+    @apply flex gap-3;
+}
+
+.astro-social-share a {
+    @apply text-main w-6 h-6;
+}
+
+.astro-social-share a svg {
+    @apply fill-[#171717] dark:fill-[#F2F1EC];
+}
