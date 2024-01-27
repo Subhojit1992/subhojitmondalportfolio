@@ -13,8 +13,8 @@ Drop an email to Subhojit Mondal at [subhojit1992.mondal@gmail.com](mailto:subho
 
 **🌐 Social Media:**
 
-- GitHub: Explore Subhojit's projects and contributions on [GitHub](https://github.com/Subhojit1992/){:target="\_blank"}.
-- LinkedIn: Connect with Subhojit on [LinkedIn](https://www.linkedin.com/in/subhojit1992/){:target="\_blank"} for professional networking.
+- GitHub: Explore Subhojit's projects and contributions on [GitHub](https://github.com/Subhojit1992/).
+- LinkedIn: Connect with Subhojit on [LinkedIn](https://www.linkedin.com/in/subhojit1992/) for professional networking.
 
 <!-- Calendly link widget begin -->
 
