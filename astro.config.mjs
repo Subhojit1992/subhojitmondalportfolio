@@ -6,7 +6,7 @@ import AstroPWA from '@vite-pwa/astro';
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://subhojit-mondal-portfolio.netlify.app',
+    site: 'https://subhojit.me',
     integrations: [
         mdx(),
         sitemap(),
