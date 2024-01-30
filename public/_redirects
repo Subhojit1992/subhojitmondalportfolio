@@ -1,4 +1,2 @@
-/blog/:slug/*   /blog/:slug/:splat  200
-/sitemap-index.xml    /sitemap-index.xml    200
-/rss.xml    /rss.xml    200
-/sitemap-0.xml  /sitemap-0.xml  200
+/*   /*   200
+
