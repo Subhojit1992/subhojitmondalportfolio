@@ -9,6 +9,6 @@ const { pathname } = Astro.url;
 const isActive = href === pathname || href === pathname.replace(/\/$/, '');
 ---
 
-<a class:list={[className, { 'underline underline-offset-2 decoration-1': isActive }]} href={href} {...props} data-astro-prefetch="viewport">
+<a class:list={[className, { 'underline underline-offset-2 decoration-1': isActive }]} href={href} {...props}>
     <slot />
 </a>
