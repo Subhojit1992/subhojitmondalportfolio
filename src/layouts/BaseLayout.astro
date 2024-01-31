@@ -1,6 +1,6 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
-// import { pwaInfo } from 'virtual:pwa-info';
+import { pwaInfo } from 'virtual:pwa-info';
 // import ReloadPrompt from '../components/ReloadPrompt.astro';
 import BaseHead, { type Props as HeadProps } from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
@@ -50,7 +50,7 @@ const { title } = Astro.props as Props;
         </script>
         <!-- End Google Tag Manager -->
         <ViewTransitions />
-        <!-- {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />} -->
+        {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
     </head>
     <body class="bg-main text-main">
         <!-- Google Tag Manager (noscript) -->
