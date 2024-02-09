@@ -74,7 +74,7 @@ const { title } = Astro.props as Props;
         <!-- <ReloadPrompt /> -->
         <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
         <script type="text/javascript">
-            window.addEventListener('load', function () {
+            document.addEventListener('astro:page-load', () => {
                 window.docsearch({
                     appId: 'HU1BYWH219',
                     apiKey: '4d8578d0e3dcdd12774274e8a373c7a3',
