@@ -24,6 +24,10 @@ const { title } = Astro.props as Props;
         </script>
         <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
         <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+        <!-- algolia -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+
         <!-- Google tag (gtag.js) -->
         <script type="text/partytown" async src="https://www.googletagmanager.com/gtag/js?id=G-3N0FHZ4Z9V"></script>
         <script type="text/partytown">
@@ -68,5 +72,18 @@ const { title } = Astro.props as Props;
             <Footer />
         </div>
         <!-- <ReloadPrompt /> -->
+        <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+        <script type="text/javascript">
+            window.addEventListener('load', function () {
+                window.docsearch({
+                    appId: 'HU1BYWH219',
+                    apiKey: '4d8578d0e3dcdd12774274e8a373c7a3',
+                    indexName: 'subhojit',
+                    insights: true,
+                    container: '#search',
+                    debug: false
+                });
+            });
+        </script>
     </body>
 </html>
