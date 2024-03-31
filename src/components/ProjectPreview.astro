@@ -1,22 +1,52 @@
 ---
 import { type CollectionEntry } from 'astro:content';
 import ArrowRight from '../icons/ArrowRight.astro';
+import FormattedDate from './FormattedDate.astro';
 
 type Props = { project: CollectionEntry<'projects'>; class?: string; headingLevel?: 'h2' | 'h3' };
 
 const { project, class: className, headingLevel = 'h2' } = Astro.props;
-const { title, description } = project.data;
+const { title, publishDate, updatedDate, description, seo } = project.data;
 const TitleTag = headingLevel;
 ---
 
-<a class:list={['flex justify-between items-start gap-8 group', className]} href={`/projects/${project.slug}/`}>
-    <div class="grow">
+<a
+    class:list={[
+        'sm:grid sm:grid-cols-[3fr,4fr,1fr] flex sm:flex-row flex-col justify-between items-start sm:gap-8 group filter grayscale hover:filter-none transition-all duration-300',
+        className
+    ]}
+    href={`/projects/${project.slug}/`}
+    data-astro-prefetch="viewport"
+>
+    <div class="sm:min-w-[120px]">
+        {
+            seo?.image?.src && (
+                <figure>
+                    <img class="w-full" src={seo?.image?.src} loading="lazy" decoding="async" alt={seo?.image?.alt || ''} />
+                </figure>
+            )
+        }
+    </div>
+    <div class="sm:mt-0 grow mt-3">
         <TitleTag
             class="text-xl leading-tight font-serif font-medium group-hover:underline group-hover:decoration-dashed group-hover:underline-offset-4 group-hover:decoration-1 sm:text-2xl"
         >
             {title}
         </TitleTag>
-        {description && <div class="mt-1 text-sm leading-normal">{description}</div>}
+        <!-- <div class="mt-1 text-sm leading-normal">
+            <FormattedDate date={publishDate} />
+            {
+                updatedDate && (
+                    <>
+                        {' '}
+                        <span>
+                            (Updated on <FormattedDate date={updatedDate} />)
+                        </span>
+                    </>
+                )
+            }
+        </div> -->
+        <!-- {excerpt && <div class="mt-3 text-sm leading-normal">{excerpt}</div>} -->
     </div>
     <div class="hidden font-serif italic opacity-0 transition group-hover:opacity-100 sm:inline-flex sm:gap-1 sm:items-center sm:shrink-0">
         View Project <ArrowRight class="fill-current w-4 h-4" />
