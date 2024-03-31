@@ -30,7 +30,7 @@ const { title } = Astro.props as Props;
 
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-3N0FHZ4Z9V"></script>
-        <script>
+        <script type="text/javascript">
             window.dataLayer = window.dataLayer || [];
             function gtag() {
                 dataLayer.push(arguments);
@@ -40,7 +40,7 @@ const { title } = Astro.props as Props;
             gtag('config', 'G-3N0FHZ4Z9V');
         </script>
         <!-- Google Tag Manager -->
-        <script>
+        <script type="text/javascript">
             (function (w, d, s, l, i) {
                 w[l] = w[l] || [];
                 w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
