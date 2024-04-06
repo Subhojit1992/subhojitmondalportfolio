@@ -17,7 +17,7 @@ const { title } = Astro.props as Props;
 <html lang="en" class="antialiased break-words">
     <head>
         <BaseHead {...head} />
-        <script>
+        <script type="text/javascript">
             if (localStorage.theme === 'dark') {
                 document.documentElement.classList.add('dark');
             }

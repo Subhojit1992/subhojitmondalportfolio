@@ -91,7 +91,7 @@ const { Content } = await post.render();
     }
     <div id="blog-comments"></div>
     <!-- <Subscribe class="my-16 sm:my-24" /> -->
-    <script>
+    <script type="text/javascript">
         let giscusTheme = localStorage.getItem('theme') === 'dark' ? 'dark_protanopia' : 'light_protanopia';
         let giscusAttributes = {
             src: 'https://giscus.app/client.js',
@@ -115,14 +115,14 @@ const { Content } = await post.render();
     </script>
 </BaseLayout>
 
-<script>
+<script type="text/javascript">
     document.addEventListener('astro:page-load', () => {
-        const copyUrlButton = document.querySelector('.copy-url-button') as HTMLButtonElement;
+        const copyUrlButton = document.querySelector('.copy-url-button');
         copyUrlButton?.addEventListener('click', async () => {
             await copyUrl(copyUrlButton);
         });
 
-        async function copyUrl(button: HTMLButtonElement) {
+        async function copyUrl(button) {
             let url = button.getAttribute('data-url') || '';
             let label = button.innerText;
 

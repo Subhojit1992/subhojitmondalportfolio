@@ -8,13 +8,13 @@
     </svg>
 </button>
 
-<script>
+<script type="text/javascript">
     document.addEventListener('astro:page-load', () => {
-        const changeGiscusTheme = (type: string) => {
+        const changeGiscusTheme = (type) => {
             const theme = type;
 
-            function sendMessage(message: any) {
-                const iframe: any = document.querySelector('iframe.giscus-frame');
+            function sendMessage(message) {
+                const iframe = document.querySelector('iframe.giscus-frame');
                 if (!iframe) return;
                 iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
             }
@@ -60,7 +60,7 @@
     });
 </script>
 
-<script>
+<script type="text/javascript">
     document.addEventListener('astro:after-swap', () => {
         if (localStorage.theme === 'dark') {
             document.documentElement.classList.add('dark');
