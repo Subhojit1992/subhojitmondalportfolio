@@ -1,7 +1,7 @@
 ---
 title: 'Git Toggler: toggle between "--global user.name" & "--global user.email" is more fun!'
 description: git-toggler transforms feature toggle management by seamlessly integrating with Git and enabling effortless toggling between global configurations for your Git username and email.
-publishDate: 'Jan 02 2024'
+# publishDate: 'Jan 02 2024'
 seo:
   image:
     src: '/about.jpeg'

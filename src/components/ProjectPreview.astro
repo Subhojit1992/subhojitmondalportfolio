@@ -6,7 +6,7 @@ import FormattedDate from './FormattedDate.astro';
 type Props = { project: CollectionEntry<'projects'>; class?: string; headingLevel?: 'h2' | 'h3' };
 
 const { project, class: className, headingLevel = 'h2' } = Astro.props;
-const { title, publishDate, updatedDate, description, seo } = project.data;
+const { title, publishDate, excerpt, seo } = project.data;
 const TitleTag = headingLevel;
 ---
 
@@ -33,22 +33,21 @@ const TitleTag = headingLevel;
         >
             {title}
         </TitleTag>
-        <!-- <div class="mt-1 text-sm leading-normal">
-            <FormattedDate date={publishDate} />
+        <div class="mt-1 text-sm leading-normal">
             {
-                updatedDate && (
+                publishDate && (
                     <>
                         {' '}
                         <span>
-                            (Updated on <FormattedDate date={updatedDate} />)
+                            Published on <FormattedDate date={new Date(publishDate)} />
                         </span>
                     </>
                 )
             }
-        </div> -->
-        <!-- {excerpt && <div class="mt-3 text-sm leading-normal">{excerpt}</div>} -->
+        </div>
+        {excerpt && <div class="mt-3 text-sm leading-normal">{excerpt}</div>}
     </div>
     <div class="hidden font-serif italic opacity-0 transition group-hover:opacity-100 sm:inline-flex sm:gap-1 sm:items-center sm:shrink-0">
-        View Project <ArrowRight class="fill-current w-4 h-4" />
+        View <ArrowRight class="fill-current w-4 h-4" />
     </div>
 </a>

@@ -11,13 +11,13 @@ import { sortItemsByDateDesc } from '../utils/data-utils';
 const posts = (await getCollection('blog')).sort(sortItemsByDateDesc);
 const featuredPosts = posts.filter(({ data }) => data.isFeatured);
 
-// const projects = (await getCollection('projects')).sort(sortItemsByDateDesc);
-// const featuredProjects = projects.filter(({ data }) => data.isFeatured);
+const projects = (await getCollection('projects')).sort(sortItemsByDateDesc);
+const featuredProjects = projects.filter(({ data }) => data.isFeatured);
 ---
 
 <BaseLayout description={siteConfig.description} image={siteConfig.image}>
     <Hero />
-    <!-- {
+    {
         featuredProjects?.length > 0 && (
             <div class="mb-16 sm:mb-24">
                 <h2 class="mb-12 text-xl font-serif italic sm:mb-16 sm:text-2xl">Projects</h2>
@@ -29,7 +29,7 @@ const featuredPosts = posts.filter(({ data }) => data.isFeatured);
                 </div>
             </div>
         )
-    } -->
+    }
     {
         featuredPosts?.length > 0 && (
             <div class="mb-16 sm:mb-24">

@@ -34,13 +34,12 @@ const TitleTag = headingLevel;
             {title}
         </TitleTag>
         <div class="mt-1 text-sm leading-normal">
-            <FormattedDate date={publishDate} />
             {
                 publishDate && (
                     <>
                         {' '}
                         <span>
-                            (Published on <FormattedDate date={publishDate} />)
+                            Published on <FormattedDate date={new Date(publishDate)} />
                         </span>
                     </>
                 )

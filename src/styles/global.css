@@ -68,3 +68,11 @@
 .DocSearch-Button {
     @apply m-0;
 }
+
+pre.slug-output {
+    @apply mb-0 rounded-br-none rounded-bl-none;
+}
+
+button.ant-btn-primary {
+    background: #1677ff;
+}

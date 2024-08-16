@@ -50,10 +50,10 @@ const siteConfig: SiteConfig = {
             text: 'Home',
             href: '/'
         },
-        // {
-        //     text: 'Projects',
-        //     href: '/projects'
-        // },
+        {
+            text: 'Projects',
+            href: '/projects'
+        },
         {
             text: 'Blog',
             href: '/blog'
