@@ -53,6 +53,9 @@ const { title } = Astro.props as Props;
             })(window, document, 'script', 'dataLayer', 'GTM-5NSP26K6');
         </script>
         <!-- End Google Tag Manager -->
+        <!-- End Google AdSense -->
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3711152732292450" crossorigin="anonymous"></script>
+        <!-- End Google AdSense -->
         <ViewTransitions />
         {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
     </head>
