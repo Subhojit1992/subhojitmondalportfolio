@@ -2,7 +2,7 @@
 title: How to Use API Calls in React with Custom Hooks, Axios Instance, and Interceptors
 excerpt: In this article, I'll guide you through setting up a custom hook for API calls using Axios and interceptors in a React project...
 publishDate: 'Aug 14 2024'
-isFeatured: true
+isFeatured: false
 tags:
   - React
 seo:
