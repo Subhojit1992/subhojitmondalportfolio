@@ -40,7 +40,7 @@ In this article, we'll explore what <a href="https://alpinejs.dev/" target="_bla
 
 Getting started with <a href="https://alpinejs.dev/" target="_blank">Alpine.js</a> is incredibly simple. You can add the library to your project by including it via a CDN:
 
-```html
+```javascript
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.0/dist/cdn.min.js"></script>
 ```
 
@@ -50,7 +50,7 @@ Once the script is included, you can begin adding interactivity using <a href="h
 
 A common use case in any web application is to show or hide elements. With <a href="https://alpinejs.dev/" target="_blank">Alpine.js</a>, you can do this using the `x-show` directive:
 
-```html
+```javascript
 <div x-data="{ open: false }">
   <button @click="open = !open">Toggle</button>
   <div x-show="open">
@@ -69,7 +69,7 @@ In this example:
 
 <a href="https://alpinejs.dev/" target="_blank">Alpine.js</a> allows for two-way data binding using the `x-model` directive. For instance, you can create an input field that dynamically updates:
 
-```html
+```javascript
 <div x-data="{ message: 'Hello, <a href="https://alpinejs.dev/" target="_blank">Alpine.js</a>!' }">
     <input type="text" x-model="message">
     <p>The message is: <strong x-text="message"></strong></p>
