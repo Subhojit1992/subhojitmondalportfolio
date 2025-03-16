@@ -1,5 +1,5 @@
 ---
-title: "Understanding Web Performance Metrics: Core Web Vitals Explained"
+title: "Understanding Web Performance Metrics: Core Web Vitals Explained 🕰️🚀"
 excerpt: "# Understanding Web Performance Metrics: Core Web Vitals Explained 🕰️🚀  Welcome, web enthusiasts! Today we're going to delve into the world of web p..."
 publishDate: 'Mar 16, 2025'
 isFeatured: false
@@ -15,8 +15,6 @@ seo:
 ---
 
 ![Understanding Web Performance Metrics: Core Web Vitals Explained](/understanding-web-performance-metrics-core-web-vitals-explained/understanding-web-performance-metrics-core-web-vitals-explained.webp)
-
-# Understanding Web Performance Metrics: Core Web Vitals Explained 🕰️🚀
 
 Welcome, web enthusiasts! Today we're going to delve into the world of web performance and one specific aspect that Google has been focusing on lately - Core Web Vitals. As frontend developers or technology enthusiasts, understanding these metrics is essential for creating an enjoyable user experience and improving your site's SEO. Let's get started! 🤓
 
