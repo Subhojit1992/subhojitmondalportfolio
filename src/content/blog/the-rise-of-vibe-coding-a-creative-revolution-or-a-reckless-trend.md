@@ -1,6 +1,6 @@
 ---
 title: The Rise of Vibe Coding - A Creative Revolution or a Reckless Trend?
-excerpt: StyleX dramatically minimized Facebook.com's CSS to just 130KB initially, seamlessly covering all features without encountering loading order complexities. After three years of refinement, it has grown to 170KB, yet remains battle-tested and now available as an open-source solution. While Tailwind excels for small teams, StyleX shines in the realm of larger projects and multi-team collaborations, providing indispensable tooling for building comprehensive design systems across organizations. Meta's decision to open-source StyleX marks a significant step forward...
+excerpt: In the ever-evolving world of software development, a new phenomenon has emerged - _vibe coding_. This term has started to circulate in developer circles, often accompanied by a blend of excitement, skepticism, and curiosity.
 publishDate: 'Mar 24 2025'
 isFeatured: true
 tags:
