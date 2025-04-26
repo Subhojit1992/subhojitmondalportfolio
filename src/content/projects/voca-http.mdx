@@ -1,0 +1,128 @@
+---
+title: Voca HTTP
+excerpt: A lightweight, flexible HTTP client for modern web applications, with support for interceptors, timeouts, retries, and file handling.
+publishDate: 'Apr 25 2025'
+isFeatured: true
+seo:
+  image:
+    src: '/projects/voca-http/voca-http.webp'
+    alt: Voca HTTP
+---
+
+## Modern HTTP Client for JavaScript Applications 
+![NPM Version](https://img.shields.io/npm/v/voca-http)
+
+A lightweight and flexible HTTP client for browser and Node.js environments with support for interceptors, progress tracking, and TypeScript.
+
+- 🐙 **[GitHub Repository](https://github.com/Subhojit1992/voca-http)** - Open source code
+- 📚 **[Documentation](https://vocahttp.netlify.app/)** - Get started guide & examples
+
+## Features
+
+- 📦 Promise-based HTTP client
+- 🔄 Request and response interceptors
+- ⏱️ Automatic request timeout
+- 🔁 Built-in request retry
+- 📊 Upload and download progress tracking
+- 📁 Easy file uploads with FormData handling
+- 🧩 TypeScript support
+- 🌳 Tree-shakable (ESM)
+- 🪶 Lightweight (no dependencies)
+- 🧠 Works in both browser and Node.js environments
+
+## Basic Usage
+
+```javascript
+// Create a configured instance
+const api = voca.create(fetch, {
+  baseUrl: 'https://api.example.com',
+  timeout: 10000,
+  onResponse: async (response) => {
+    if (!response.ok) {
+      throw new Error(`HTTP Error: ${response.status}`);
+    }
+    return response.json();
+  }
+});
+
+// Make requests with your configured API
+const posts = await api.get('/posts');
+const newPost = await api.post('/posts', { title: 'New Post', body: 'Content' });
+```
+
+## File Upload with Progress
+
+```javascript
+// Upload a file with progress tracking
+const updateProgress = (percent) => {
+  console.log(`Upload progress: ${percent.toFixed(1)}%`);
+  progressBar.style.width = `${percent}%`;
+};
+
+const result = await api.uploadFile(
+  'https://api.example.com/upload',
+  fileObject,
+  { 'Authorization': 'Bearer token' },
+  updateProgress
+);
+```
+
+## Preview
+
+<iframe src="https://codesandbox.io/embed/lsymw2?view=preview&module=%2Fsrc%2FApp.js&expanddevtools=1"
+  style="width:100%; height: 1000px; border:0; border-radius: 4px; overflow:hidden;"
+  title="voca-http"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+
+## Why Voca HTTP?
+
+Most modern JavaScript applications need to communicate with APIs. Voca HTTP simplifies this process by providing:
+
+- **Simplified API Interactions**: Abstract away the complexities of the Fetch API
+- **Enhanced Error Handling**: Built-in error handling and retry mechanisms
+- **Progress Monitoring**: Real-time tracking for file uploads and downloads
+- **Customization**: Flexible configuration options to meet specific requirements
+
+## Advanced Features
+
+### Request Interceptors
+
+Modify requests before they are sent, perfect for adding authentication headers:
+
+```javascript
+voca.config.addRequestInterceptor((options) => {
+  options.headers = {
+    ...options.headers,
+    'Authorization': `Bearer ${getToken()}`
+  };
+  return options;
+});
+```
+
+### Response Interceptors
+
+Transform responses before they reach your code, simplifying error handling:
+
+```javascript
+voca.config.addResponseInterceptor((response) => {
+  if (response.status === 401) {
+    // Handle unauthorized access
+    redirectToLogin();
+  }
+  return response;
+});
+```
+
+## Use Cases
+
+| Scenario | Voca HTTP Solution |
+|----------|-------------------|
+| Authentication | Add auth headers automatically with request interceptors |
+| File Uploads | Track progress and handle large files efficiently |
+| API Error Handling | Centralize error handling with response interceptors |
+| Slow Networks | Automatic retries with configurable backoff |
+| Large Data Sets | Progress tracking for long-running requests |
+
+Voca HTTP is designed to simplify HTTP interactions while providing advanced features that help build robust, responsive applications that handle real-world network conditions gracefully. 

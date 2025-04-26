@@ -1,0 +1,127 @@
+---
+title: UserDNAjs
+excerpt: A lightweight, modular fingerprint generator library for creating unique user identifiers in web applications.
+publishDate: 'Apr 26 2025'
+isFeatured: true
+seo:
+  image:
+    src: '/projects/userdnajs/userdnajs.webp'
+    alt: UserDNAjs
+---
+
+## Modern Browser Fingerprinting Library
+![NPM Version](https://img.shields.io/npm/v/userdnajs)
+
+A lightweight, modular fingerprint generator library for creating unique user identifiers in web applications without compromising user privacy.
+
+- 🐙 **[GitHub Repository](https://github.com/Subhojit1992/userdnajs)** - Open source code
+- 📚 **[Documentation](https://userdnajs.netlify.app/)** - Get started guide & examples
+
+## Features
+
+- 🧬 **Simple User Identification**: Generate consistent fingerprints for returning visitors
+- 🧩 **Modular Architecture**: Only use the fingerprinting techniques you need
+- 🔒 **Privacy-Focused**: No server-side components or data collection
+- ⚙️ **Basic Customization**: Support for up to 2 custom components
+- 📝 **TypeScript Support**: Full TypeScript definitions included
+- 📦 **Multiple Formats**: Use as an ES module, CommonJS module, or via CDN
+- 🪶 **Small Footprint**: Minimal impact on page load times
+- 💾 **Easy Storage**: Built-in support for localStorage and sessionStorage
+
+## Quick Start
+
+```javascript
+import { createUserDNA } from 'userdnajs';
+
+// Create a new instance with default options
+const userDNA = createUserDNA();
+
+// Get a visitor ID
+userDNA.getVisitorId().then(id => {
+  console.log('Visitor ID:', id);
+});
+
+// Get the full fingerprint
+userDNA.getFingerprint().then(result => {
+  console.log('Fingerprint result:', result);
+});
+```
+
+## Configuration Example
+
+```javascript
+import { createUserDNA } from 'userdnajs';
+
+const userDNA = createUserDNA({
+  // What components to include in the fingerprint
+  includeBrowserInfo: true,
+  includeScreenInfo: true,
+  includeTimezone: true,
+  includeLanguage: true,
+  includeStorage: true,
+  
+  // Storage configuration
+  storagePrefix: 'myapp',
+  storageType: 'localStorage', // 'localStorage', 'sessionStorage', or 'none'
+  
+  // Add custom fingerprinting components (max 2)
+  customComponents: [
+    {
+      name: 'customData',
+      getValue: () => 'some-custom-value'
+    },
+    {
+      name: 'timestamp',
+      getValue: () => new Date().toISOString()
+    }
+  ]
+});
+```
+
+## Why UserDNAjs?
+
+Modern web applications often need to identify returning users without requiring account creation. UserDNAjs provides:
+
+- **Easy User Identification**: Generate consistent fingerprints to recognize returning visitors
+- **Lightweight Implementation**: Small size with minimal performance impact
+- **Privacy Respecting**: No backend dependencies or data collection
+- **Flexible Integration**: Use only the components you need, with easy configuration
+
+## Core API
+
+### Available Methods
+
+```javascript
+// Get visitor ID (fingerprint hash)
+userDNA.getVisitorId().then(id => {
+  console.log('Visitor ID:', id);
+});
+
+// Check if current visitor matches previous ID
+userDNA.isSameVisitor('previous-id').then(isSame => {
+  if (isSame) {
+    console.log('Same visitor detected');
+  }
+});
+
+// Update options after initialization
+userDNA.updateOptions({
+  includeScreenInfo: false,
+  storageType: 'sessionStorage'
+});
+
+// Get current options
+const options = userDNA.getOptions();
+```
+
+## Use Cases
+
+| Scenario | UserDNAjs Solution |
+|----------|-------------------|
+| User Analytics | Track returning visitors without accounts |
+| A/B Testing | Ensure consistent experiences across sessions |
+| Fraud Prevention | Flag suspicious patterns in user behavior |
+| Personalization | Customize experience for returning visitors |
+| Guest Checkout | Remember preferences without account creation |
+
+UserDNAjs is designed to provide simple, privacy-focused browser fingerprinting for applications that need to identify users across sessions without requiring authentication. 
